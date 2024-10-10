@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-thame="white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy Website</title>
+    <link rel="shortcut icon" href="./images/logo.webp" type="image/x-icon" />
+    <!-- dassy & tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- header start -->
+    <header class="w-10/12 mx-auto">
+      <nav class="flex justify-between items-center pt-3">
+        <div class="flex gap-3">
+          <div class="flex items-center">
+            <img src="./images/logo.webp" alt="web img" />
+          </div>
+          <h3 class="text-xl font-bold">Paddy</h3>
+        </div>
+        <div class="hidden md:block flex gap-6">
+          <a class="font-medium" href="">Home</a>
+          <a class="font-medium" href="">Shop</a>
+          <a class="font-medium" href="">Contact</a>
+        </div>
+        <div class="hidden md:block flex items-center border-2 rounded-full">
+          <img
+            class="p-1"
+            src="https://img.icons8.com/?size=48&id=KICzEAXp0VMR&format=png"
+            alt=""
+          />
+        </div>
+        <div class="md:hidden">
+          <img
+            src="https://img.icons8.com/?size=48&id=eofQ1g5BaAx6&format=png"
+            alt=""
+          />
+        </div>
+      </nav>
+    </header>
+    <!-- header end -->
+    <!-- main start -->
+    <main class="w-10/12 mx-auto">
+      <!-- benner heading cat & dog start -->
+      <section>
+        <div class="text-center py-5 space-y-3">
+          <p class="font-semibold">Bringing Families Together ❤️‍🔥</p>
+          <h1 class="text-3xl font-bold">Your Path to Adoption Starts Here</h1>
+          <p>
+            Our website is very popular for animal lovers. Now there are many
+            good quality <br />Animals available for less money.
+          </p>
+          <div>
+            <button class="btn btn-success" onclick="view()">View More</button>
+          </div>
+        </div>
+        <div class="flex items-center justify-center w-9/12 mx-auto pt-3">
+          <img src="./images/pet.webp" alt="" />
+        </div>
+      </section>
+      <!-- benner heading cat & dog end -->
+      <!-- js working start -->
+      <section class="space-y-6">
+        <!-- decription start -->
+        <div class="text-center mt-5 space-y-3">
+          <h3 class="text-3xl font-bold">Adopt Your Best Friend</h3>
+          <p>
+            The behavior of these animals is very friendly and if you give love
+            to these animals,<br />They are very friendly and stay with you all
+            the time.
+          </p>
+        </div>
+        <!-- decription end -->
+        <!-- Animal button start -->
+        <div
+          id="button4"
+          class="grid md:grid-cols-2 lg:grid-cols-4 text-center gap-3"
+        ></div>
+        <!-- Animal button end -->
+        <!-- sort start -->
+        <div class="flex justify-between text-center items-center">
+          <p class="text-lg font-semibold">Best Deal For you</p>
+          <div>
+            <button
+              id="priceSort"
+              class="btn btn-success"
+              onclick="sortByPrice()"
+            >
+              Sort by Price
+            </button>
+          </div>
+        </div>
+        <!-- sort end -->
+        <!-- cards start -->
+        <div id="allCards" class="flex justify-between">
+          <div
+            id="cards"
+            class="card md:grid md:grid-cols-2 lg:grid-cols-3 w-[74%]"
+          ></div>
+          <!-- img -->
+          <div id="cardImg" class="card shadow-lg w-[24%] text-wrap">
+            <div
+              id="cardGelary"
+              class="card grid md:grid md:grid-cols-2 pt-4"
+            ></div>
+          </div>
+        </div>
+        <!-- cards end -->
+        <!-- loding spner start 4btn -->
+        <!-- You can open the modal using ID.showModal() method -->
+        <div>
+          <button id="btn4OpenModal" class="hidden">open modals</button>
+          <div id="my_modals_4" class="">
+            <div id="lodings" class="flex justify-center p-2 hidden">
+              <span class="loading loading-bars loading-xs"></span>
+              <span class="loading loading-bars loading-sm"></span>
+              <span class="loading loading-bars loading-md"></span>
+              <span class="loading loading-bars loading-lg"></span>
+              <div class="">
+                <form method="dialog">
+                  <!-- if there is a button, it will close the modal -->
+                  <button id="cancel1" class="btn hidden">Close</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- loding spner end -->
+      </section>
+      <!-- js working end -->
+      <!-- Adobt modal div -->
+      <div id="modal" class="hidden"></div>
+      <!-- Adopt modal start-->
+      <div>
+        <!-- You can open the modal using ID.showModal() method -->
+        <button
+          id="modalbtn2so"
+          class="btn hidden"
+          onclick="my_modal_4.showModal()"
+        >
+          open modal
+        </button>
+        <dialog id="my_modal_4" class="modal">
+          <div class="modal-box w-10/12 md:w-5/12 max-w-5xl">
+            <!-- text -->
+            <div class="text-center p-5 space-y-3">
+              <div class="flex justify-center">
+                <img
+                  src="https://img.icons8.com/?size=48&id=q6BlPrJZmxHV&format=png"
+                  alt=""
+                />
+              </div>
+              <h3 class="text-5xl font-bold text-green-500">Congrats</h3>
+              <p>Welcome You got pets successfully</p>
+              <!-- coundown -->
+              <div
+                id="countdownDisplay"
+                class="p-10 text-7xl font-extrabold"
+              ></div>
+            </div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button, it will close the modal -->
+                <button id="closes" class="btn hidden">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </div>
+      <!-- Adopt modal end -->
+    </main>
+    <!-- main end -->
+    <!-- footer start -->
+    <footer class="py-12 bg-black mt-5">
+      <section class="w-10/12 mx-auto md:flex justify-between">
+        <!-- 1st start -->
+        <div class="space-y-2">
+          <div class="flex gap-2 items-center">
+            <div><img src="./images/logo.webp" alt="" /></div>
+            <p class="text-xl text-white font-bold">Paddy</p>
+          </div>
+          <p class="text-white">Location : Dhaka,kataban,1260</p>
+          <p class="text-white">phone : +8801810000000</p>
+          <p class="text-white">Email : info3453@email.com</p>
+          <p class="text-white">Opening hours : 08:00 AM-08:00 PM</p>
+          <div class="flex gap-2 items-center">
+            <img
+              src="https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png"
+              alt=""
+            />
+            <img
+              src="https://img.icons8.com/?size=48&id=19318&format=png"
+              alt=""
+            />
+            <img
+              src="https://img.icons8.com/?size=48&id=Xy10Jcu1L2Su&format=png"
+              alt=""
+            />
+            <img
+              src="https://img.icons8.com/?size=48&id=AltfLkFSP7XN&format=png"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- 1st end -->
+        <!-- 2st start -->
+        <div class="space-y-2">
+          <p class="text-lg text-white font-semibold">Useful Links</p>
+          <div class="space-y-2">
+            <div><a class="text-white" href="">Home</a></div>
+            <div><a class="text-white" href="">About Us</a></div>
+            <div><a class="text-white" href="">Animals</a></div>
+            <div><a class="text-white" href="">Foundation</a></div>
+            <div><a class="text-white" href="">Contact</a></div>
+          </div>
+        </div>
+        <!-- 2st end -->
+        <!-- 3st start -->
+        <div class="space-y-5">
+          <p class="text-lg text-white font-bold">Drop a Message</p>
+          <div>
+            <label class="input input-bordered flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                class="h-4 w-4 opacity-70"
+              >
+                <path
+                  d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z"
+                />
+                <path
+                  d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z"
+                />
+              </svg>
+              <input type="text" class="grow" placeholder="Email" />
+            </label>
+          </div>
+          <div>
+            <button class="btn btn-success text-white w-full">Subscribe</button>
+          </div>
+        </div>
+        <!-- 3st end -->
+      </section>
+    </footer>
+    <!-- footer end -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
